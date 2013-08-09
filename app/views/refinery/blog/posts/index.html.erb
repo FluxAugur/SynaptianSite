@@ -1,0 +1,49 @@
+<div class="bar_wrap">
+<div id="header_wrapper" class="container">
+<div class="inner">
+<div class="container">
+<div class="page-heading">
+  <h1 class="blog-font">Blog</h1>
+</div>
+</div>
+</div>
+</div>
+  <div STYLE="float:right; border-left-style: solid ; width: 20%; margin-right: 4%; margin-top: 4%">
+    <h2 style="text-align: center">Follow Us</h2>
+    <br/>
+    <br/>
+    <div STYLE="display: table; margin: 0 auto">
+      <a href='http://linkedin.com/company/synaptian'>
+        <img style="float: left; margin-right: 4px" src="/assets/linkedin_Icon.jpg"> </a>
+      <a href='http://facebook.com/synaptian'>
+        <img style="float: left; margin-right: 4px" src="/assets/facebook_Icon.jpg"> </a>
+      <a href='http://twitter.com/synaptian'>
+        <img style="float: left; margin-right: 4px" src="/assets/twitter_Icon.jpg"> </a>
+    </div>
+    <br/>
+    <br/><br/>
+    <br/>
+    <br/>
+    <br/><br/>
+
+  </div>
+<div id='page'>
+  <div id='contact'>
+    <div class='container' id='sub_footer'>
+      <% content_for :body_content_left do %>
+        <div class="container">
+          <div class="span4">
+          <div class="span7">
+            <br>
+          <% if @posts.any? %>
+            <section id="blog_posts">
+              <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+              <%= will_paginate @posts %>
+            </section>
+          <% else %>
+            <p><%= t('.no_blog_articles_yet') %></p>
+          <% end %>
+          <br>
+        <% end %>
+           <%= render :partial => "/refinery/content_page", :locals => { :remove_automatic_sections => true } %>
+           <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>

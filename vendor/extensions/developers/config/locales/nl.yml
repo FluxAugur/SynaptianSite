@@ -1,0 +1,31 @@
+nl:
+  refinery:
+    plugins:
+      developers:
+        title: Developers
+    developers:
+      admin:
+        developers:
+          actions:
+            create_new: Maak een nieuwe Developer
+            reorder: Wijzig de volgorde van de Developers
+            reorder_done: Klaar met het wijzingen van de volgorde van de Developers
+          records:
+            title: Developers
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Developers. Druk op 'Maak een nieuwe Developer' om de eerste aan te maken.
+          developer:
+            view_live_html: Bekijk deze developer op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze developer
+            delete: Verwijder deze developer voor eeuwig
+      developers:
+        show:
+          other: Andere Developers
+  activerecord:
+    attributes:
+      'refinery/developers/developer':
+        name: Name
+        title: Title
+        email: Email
+        bio: Bio
+        photo: Photo

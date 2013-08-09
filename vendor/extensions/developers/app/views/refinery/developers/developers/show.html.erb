@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @developer.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @developer.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @developer.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Email</h1>
+    <p>
+      <%=raw @developer.email %>
+    </p>
+  </section>
+  <section>
+    <h1>Bio</h1>
+    <p>
+      <%=raw @developer.bio %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @developer.photo_id, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="developers">
+      <% @developers.each do |developer| %>
+        <li>
+          <%= link_to developer.name, refinery.developers_developer_path(developer) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

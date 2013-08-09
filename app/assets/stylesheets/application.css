@@ -1,0 +1,11 @@
+@import "css/bootstrap.css";
+@import "css/bootstrap-responsive.css";
+@import "css/shield-responsive.css";
+@import "style.css";
+@import "css/prettyPhoto.css";
+@import "flexslider.css";
+
+#body .inner {
+  background: url('noise.png') #a00;
+}
+

@@ -1,0 +1,65 @@
+
+<div class="bar_wrap">
+<div class="inner">
+  <div class="container" id="header_wrapper">
+    <div class="container">
+      <div class="page-heading">
+        <h1>About Us</h1>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div id="page">
+  <div class="container">
+    <div class="row">
+      <div id="page-heading">
+        <hr />
+        <h2>Synaptian provides Software Solutions.</h2>
+        <hr />
+      </div>
+
+    </div>
+
+    <br />
+    <br />
+    <div class="row">
+      <div class="span8">
+
+      </div>
+
+    </div>
+
+    <hr />
+    <div class="container clearfix dev" id="team">
+      <h2>People Behind Synaptian</h2>
+      <hr />
+      <% @developers.each do |developer| %>
+          <div class="span11 team">
+            <div class="span4">
+              <div class="dev_photo">
+                <% if developer.photo_id %>
+                  <%= image_tag developer.avatar.url(:thumb), :class => "image_left" %>
+                <% else %>
+                  <img alt="image" class="image_left" src="/assets/people-1-f67db9bbf80cc01d32922431a0358ed7.jpg" />
+                <% end %>
+              </div>
+              <h5><%= developer.name %></h5>
+              <p class="textstyle3"><%= developer.title %></p>
+              <ul class="team_info">
+                <li>
+                  <a href="mailto:<%= developer.email %>">Send Mail</a>
+                </li>
+              </ul>
+            </div>
+            <div class="span5">
+              <%= developer.bio[3..-5] %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+<br/>

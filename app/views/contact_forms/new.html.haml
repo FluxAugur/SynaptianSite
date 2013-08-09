@@ -1,0 +1,9 @@
+= simple_form_for @contact_form do |f|
+  = f.input :recipient, :as => :hidden, :input_html => { :value => "nate@synaptian.com" }
+  = f.input :name, :required => true, :input_html => { :class => "span6" }
+  = f.input :email, :required => true, :input_html => { :class => "span6" }
+  = f.input :phone, :input_html => { :class => "span6" }
+  = f.input :message, :as => :text, :required => true, :input_html => { :rows => 10, :class => "span6" }
+  .hidden
+    = f.input :nickname, :hint => 'Leave this field blank!'
+  = f.button :submit, 'Send Message', :class => "btn btn-primary"

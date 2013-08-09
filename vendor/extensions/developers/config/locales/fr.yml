@@ -1,0 +1,31 @@
+fr:
+  refinery:
+    plugins:
+      developers:
+        title: Developers
+    developers:
+      admin:
+        developers:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Developer
+            reorder: Réordonner les Developers
+            reorder_done: Fin de réordonnancement des Developers
+          records:
+            title: Developers
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Developer. Cliquer sur "Créer un(e) nouve(au/l/lle) Developer" pour créer votre premi(er/ère) developer.'
+          developer:
+            view_live_html: Voir ce(t/tte) developer <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) developer
+            delete: Supprimer définitivement ce(t/tte) developer
+      developers:
+        show:
+          other: Autres Developers
+  activerecord:
+    attributes:
+      'refinery/developers/developer':
+        name: Name
+        title: Title
+        email: Email
+        bio: Bio
+        photo: Photo

@@ -1,0 +1,31 @@
+en:
+  refinery:
+    plugins:
+      developers:
+        title: Developers
+    developers:
+      admin:
+        developers:
+          actions:
+            create_new: Add New Developer
+            reorder: Reorder Developers
+            reorder_done: Done Reordering Developers
+          records:
+            title: Developers
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Developers yet. Click "Add New Developer" to add your first developer.
+          developer:
+            view_live_html: View this developer live <br/><em>(opens in a new window)</em>
+            edit: Edit this developer
+            delete: Remove this developer forever
+      developers:
+        show:
+          other: Other Developers
+  activerecord:
+    attributes:
+      'refinery/developers/developer':
+        name: Name
+        title: Title
+        email: Email
+        bio: Bio
+        photo: Photo

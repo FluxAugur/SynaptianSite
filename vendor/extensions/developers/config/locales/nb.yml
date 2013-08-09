@@ -1,0 +1,31 @@
+nb:
+  refinery:
+    plugins:
+      developers:
+        title: Developers
+    developers:
+      admin:
+        developers:
+          actions:
+            create_new: Lag en ny Developer
+            reorder: Endre rekkefølgen på Developers
+            reorder_done: Ferdig å endre rekkefølgen Developers
+          records:
+            title: Developers
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Developers enda. Klikk på "Lag en ny Developer" for å legge til din første developer.
+          developer:
+            view_live_html: Vis hvordan denne developer ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne developer
+            delete: Fjern denne developer permanent
+      developers:
+        show:
+          other: Andre Developers
+  activerecord:
+    attributes:
+      'refinery/developers/developer':
+        name: Name
+        title: Title
+        email: Email
+        bio: Bio
+        photo: Photo

@@ -1,0 +1,66 @@
+<div class="bar_wrap">
+<div class="inner">
+<div class="container">
+<div class="page-heading">
+  <h1>Blog</h1>
+</div>
+</div>
+</div>
+</div>
+
+<div id='page'>
+
+  <div id='contact'>
+
+    <div class='container' id='sub_footer'>
+
+<% flash.each do |key, value| %>
+ <div id='flash' class="flash flash_<%= key %>">
+   <%= value %>
+ </div>
+<% end %>
+<div id='blog-content'>
+<article id="blog_post">
+  <header>
+    <h2><%= @post.title %></h2>
+    <section class='details'>
+      <time datetime="<%=l @post.published_at.to_date, :format => :default %>" class='posted_at'>
+        <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date, :format => :short)) %>
+      </time>
+      <%= content_tag(:div, "#{t('by', :scope => 'refinery.blog.posts.show')} #{@post.author.username}", :class => "blog_author") if @post.author.present? %>
+      <br>
+      <% if @post.source_url.present? %>
+        <div class='blog_source'>
+          <%= "#{t('source', :scope => 'refinery.blog.posts.show')}: " %>
+          <%= link_to (@post.source_url_title.blank? ? @post.source_url : @post.source_url_title), @post.source_url %>
+        </div>
+      <% end %>
+      <% if (categories = @post.categories).any? %>
+        <aside class='filed_in'>
+          <%= t('filed_in', :scope => 'refinery.blog.posts.show') %>
+          <% categories.each_with_index do |category, index| %>
+            <%= link_to category.title, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
+          <% end %>
+        </aside>
+      <% end %>
+    </section>
+  </header>
+
+  <div id="blog_content">
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style">
+    <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_linkedin_counter"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=undefined"></script>
+  <!-- AddThis Button END -->
+
+  <%= @post.body.html_safe %>
+  </div>
+  <% if Refinery::Blog::Post::ShareThis.enabled? %>
+    <span class="st_sharethis" displayText="ShareThis"></span>
+  <% end %>
+</article>
+</div>
+<%= render :partial => '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>

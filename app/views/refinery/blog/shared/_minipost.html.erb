@@ -1,0 +1,8 @@
+<% if minipost.live? %>
+  <article class="blog_post" id="<%= dom_id(minipost) %>">
+    <header>
+      <h4><%= link_to minipost.title, refinery.blog_post_path(minipost) %></h4>
+    </header>
+  </article>
+  <br>
+<% end %>

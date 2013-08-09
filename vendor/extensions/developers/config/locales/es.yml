@@ -1,0 +1,32 @@
+es:
+  refinery:
+    plugins:
+      developers:
+        title: Developers
+#        article: masculino/femenino
+    developers:
+      admin:
+        developers:
+          actions:
+            create_new: Crear nuevo developer
+            reorder: Reordenar developers
+            reorder_done: Reordenación de developers completada
+          records:
+            title: Developers
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay developers todavía. Pulsa en "Crear nuevo Developer" para crear tu primer developer.
+          developer:
+            view_live_html: Ver este developer como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este developer
+            delete: Borrar este developer para siempre
+      developers:
+        show:
+          other: Otros developers
+  activerecord:
+    attributes:
+      'refinery/developers/developer':
+        name: Name
+        title: Title
+        email: Email
+        bio: Bio
+        photo: Photo

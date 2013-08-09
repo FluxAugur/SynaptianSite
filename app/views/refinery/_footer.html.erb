@@ -1,0 +1,52 @@
+<div id='extra'>
+<div class='inner'>
+<div class='container'>
+<div class='row'>
+<div class='span4'>
+<h3>Links</h3>
+<ul class='footer-links clearfix'>
+<li>
+<a href="/">Home</a>
+</li>
+<li>
+<a href="/blog">Blog</a>
+</li>
+</ul>
+<ul class='footer-links clearfix'>
+<li>
+<a href="/about">About</a>
+</li>
+<li>
+<a href="/contact">Contact</a>
+</li>
+</ul>
+</div>
+<div class='span4'>
+<h3>Tweets</h3>
+<br>
+<ul><div id='tweet'>
+  <% @tweets.each do |tweet|  %>
+  <li><%= tweet.text %></li>
+  <% end %>
+</div></ul>
+</div>
+<div class='span4'>
+<h3>Recent Blog Articles</h3>
+<br>
+<div class='footer-links'>
+  <% unless @posts == nil %>
+    <% if @posts.any? %>
+      <section id="blog_posts">
+        <%= render :partial => "/refinery/blog/shared/minipost", :collection => @posts.take(5) %>
+      </section>
+    <% else %>
+      <p>No blog articles yet.</p>
+    <% end %>
+  <% else %>
+    <p>Recent articles are temporarily unavailable.</p>
+  <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>

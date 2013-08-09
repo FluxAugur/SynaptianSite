@@ -1,0 +1,33 @@
+zh-CN:
+  refinery:
+    plugins:
+      developers:
+        title: Developers
+    developers:
+      admin:
+        developers:
+          actions:
+            create_new: 建立新的 Developer
+            reorder: 对 Developers 重新排序
+            reorder_done: 对 Developers 的重新排序结束
+          records:
+            title: Developers
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Developers yet. Click "Add New Developer" to add your first developer.
+            no_items_yet: 目前没有 Developers . 点击 "Add New Developer" 创建一个developer.
+          developer:
+            view_live_html: 查看 developer 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 developer
+            delete: 永久删除 developer
+      developers:
+        show:
+          other: 其他 Developers
+  activerecord:
+    attributes:
+      'refinery/developers/developer':
+        name: Name
+        title: Title
+        email: Email
+        bio: Bio
+        photo: Photo

@@ -1,0 +1,36 @@
+<div class="bar_wrap">
+  <div class="inner">
+    <div class="container" id="header_wrapper">
+      <div class="container">
+        <div class="page-heading">
+          <h1>Sign In</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="page">
+    <div id="login">
+      <div class="container" id="sub_footer">
+      <hr />
+        <div class="clearfix"></div>
+        <div class="span6">
+          <%= form_for resource, :as => resource_name,
+                       :url => refinery.refinery_user_session_path do |f| %>
+            <div class='field session_username clearfix'>
+              <%= f.label :login %>
+              <%= f.text_field :login, :class => 'span5' %>
+            </div>
+            <div class='field session_password clearfix'>
+              <%= f.label :password %>
+              <%= f.password_field :password, :autocomplete => 'off', :class => 'span5' %>
+            </div>
+            <div class='button'>
+              <%= f.submit 'Sign In' %>
+            </div>
+          <% end -%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

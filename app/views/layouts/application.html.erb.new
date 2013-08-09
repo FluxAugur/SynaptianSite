@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<%= render '/refinery/html_tag' %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <%= render '/refinery/head' %>
+  <%= render '/refinery/javascripts' %>
+  <body onload='prettyPrint()'>
+    <%= site_bar -%>
+    <%= render '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+    <div id="page_container">
+      <header id="header">
+        <%= render '/refinery/header' -%>
+        <%= favicon_link_tag 'favicon.png' %>
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,900italic' rel='stylesheet' type='text/css'>
+        <script src='http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js' type='text/javascript'></script>
+      </header>
+      <section id="page">
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render '/refinery/footer' -%>
+      </footer>
+    </div>
+  </body>
+</html>
